@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lablook — наращивание ресниц в Москве</title>
+<meta name="description" content="Студия ресниц Lablook в Москве: классическое наращивание, 1.5D–3D, ламинирование бровей. Мастер Екатерина, 9 лет опыта. Запись в WhatsApp.">
+<meta name="theme-color" content="#FAF6F1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BeautySalon","name":"Lablook","telephone":"+7 926 576-69-92","address":{"@type":"PostalAddress","streetAddress":"Шарикоподшипниковская улица, 22","addressLocality":"Москва","addressCountry":"RU"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.2","reviewCount":"3"}}
+</script>
+<style>
+:root{
+  --bg:#FAF6F1; --surface:#F3EADF; --sand:#E6D5C3; --line:#E4D7C8;
+  --ink:#2B2420; --muted:#5E5148; --accent:#8A5A3C; --accent-d:#6E4630; --gold:#B58B6B;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:84px}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:.01em}
+h1{font-size:clamp(42px,8vw,76px)}
+h2{font-size:clamp(32px,5vw,46px);margin-bottom:12px}
+h3{font-size:24px}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+.lead{color:var(--muted);max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;border-radius:999px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition:background .2s,box-shadow .2s;cursor:pointer;border:0;font-size:16px}
+.btn:hover{background:var(--accent-d);box-shadow:0 8px 24px rgba(110,70,48,.25)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--gold)}
+.btn.ghost:hover{background:var(--surface);box-shadow:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:30;background:rgba(250,246,241,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.logo{font-family:var(--serif);font-size:28px;font-weight:600;text-decoration:none;letter-spacing:.04em}
+.nav ul{display:none;list-style:none;padding:0;gap:28px}
+.nav ul a{text-decoration:none;color:var(--muted);font-size:15px;font-weight:500;transition:color .2s}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media(min-width:820px){.nav ul{display:flex}}
+
+/* hero */
+.hero{padding:56px 0 72px;background:radial-gradient(900px 400px at 85% 0,var(--sand) 0,transparent 70%)}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.hero p.lead{font-size:19px;margin:20px 0 32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.facts b{display:block;font:600 34px/1 var(--serif)}
+.facts span{font-size:14px;color:var(--muted)}
+.ph{border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--sand),var(--surface));aspect-ratio:4/5;display:grid;place-items:center;color:var(--muted);text-align:center;padding:24px;font-size:14px;border:1px solid var(--line)}
+.ph svg{margin:0 auto 12px;color:var(--gold)}
+@media(min-width:820px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+
+/* about */
+.about{background:var(--surface)}
+.about-grid{display:grid;gap:40px;align-items:center}
+.about .ph{aspect-ratio:1/1;border-radius:24px;background:var(--sand)}
+.about p+p{margin-top:14px}
+@media(min-width:820px){.about-grid{grid-template-columns:.8fr 1.2fr}}
+
+/* awards */
+.cards{display:grid;gap:16px;margin-top:32px}
+.award{border:1px dashed var(--gold);border-radius:20px;padding:28px;background:#fff;text-align:center;color:var(--muted)}
+.award svg{margin:0 auto 12px;color:var(--gold)}
+.award b{display:block;color:var(--ink);font:600 22px var(--serif)}
+@media(min-width:700px){.cards{grid-template-columns:repeat(3,1fr)}}
+
+/* prices */
+.prices{background:var(--surface)}
+.group{margin-top:36px}
+.group h3{margin-bottom:6px;color:var(--accent-d)}
+.row{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.row .name{flex:1}
+.row small{display:block;color:var(--muted);font-size:14px}
+.row .price{font:600 24px var(--serif);white-space:nowrap}
+.note{margin-top:20px;font-size:14px;color:var(--muted)}
+
+/* works */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:32px}
+.gallery .ph{border-radius:20px;aspect-ratio:1/1;padding:12px;font-size:13px}
+@media(min-width:820px){.gallery{grid-template-columns:repeat(4,1fr)}}
+
+/* reviews */
+.rev{display:grid;gap:16px;margin-top:32px}
+.rev blockquote{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}
+.rev cite{display:block;margin-top:14px;font-style:normal;font-weight:600;font-size:15px}
+.rev .stars{color:var(--gold);letter-spacing:3px;margin-bottom:10px}
+@media(min-width:820px){.rev{grid-template-columns:repeat(3,1fr)}}
+
+/* steps / faq */
+.steps{counter-reset:s;display:grid;gap:16px;margin-top:32px}
+.step{counter-increment:s;padding:24px;border-radius:20px;background:#fff;border:1px solid var(--line)}
+.step::before{content:"0" counter(s);font:600 36px var(--serif);color:var(--gold);display:block;margin-bottom:6px}
+.step p{color:var(--muted);font-size:16px}
+@media(min-width:820px){.steps{grid-template-columns:repeat(4,1fr)}}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:44px;align-items:center}
+summary::after{content:"+";font-size:26px;color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:8px}
+
+/* contacts */
+.contacts{background:var(--ink);color:#F6EFE7}
+.contacts .eyebrow{color:var(--sand)}
+.contacts .lead,.contacts address{color:#D9CBBB;font-style:normal}
+.contacts .btn.ghost{color:#F6EFE7;border-color:#8c7a6a}
+.contacts .btn.ghost:hover{background:#3a312b}
+.contacts address{margin:20px 0 28px;font-size:19px}
+footer{padding:28px 0;font-size:13px;color:var(--muted);text-align:center}
+
+/* sticky mobile CTA */
+.fab{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;box-shadow:0 10px 30px rgba(43,36,32,.3)}
+@media(min-width:820px){.fab{left:auto;right:24px;width:auto}body{padding-bottom:0}}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Lablook — на главную">Lablook</a>
+    <ul>
+      <li><a href="#master">Мастер</a></li>
+      <li><a href="#prices">Цены</a></li>
+      <li><a href="#works">Работы</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <a class="btn" href="https://wa.me/79265766992" target="_blank" rel="noopener">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Студия ресниц и бровей · Москва</p>
+      <h1>Ресницы, к которым возвращаются</h1>
+      <p class="lead">Естественный объём без дискомфорта: аккуратная работа мастера с 9-летним опытом. Подберём эффект под ваши глаза и образ жизни.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/79265766992" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.3L3 20l1.3-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Записаться в WhatsApp</a>
+        <a class="btn ghost" href="#prices">Смотреть цены</a>
+      </div>
+      <div class="facts">
+        <div><b>9 лет</b><span>опыта мастера</span></div>
+        <div><b>4.2</b><span>рейтинг на Яндекс Картах</span></div>
+        <div><b>5</b><span>техник наращивания</span></div>
+      </div>
+    </div>
+    <div class="ph" role="img" aria-label="Место для фото работы мастера">
+      <div>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3.5"/></svg>
+        Здесь будет фото работы
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="master">
+  <div class="wrap about-grid">
+    <div class="ph" role="img" aria-label="Место для портрета мастера Екатерины">
+      <div>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>
+        Портрет Екатерины
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Ваш мастер</p>
+      <h2>Екатерина</h2>
+      <p class="lead">Девять лет я создаю ресницы, которые выглядят естественно и не доставляют неудобств. Клиентки остаются со мной годами: процедура комфортная, а результат держится красиво весь срок носки.</p>
+      <p class="lead">Работаю в уютном и чистом кабинете. Во время наращивания многие клиентки засыпают.</p>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <p class="eyebrow">Признание</p>
+    <h2>Награды и сертификаты</h2>
+    <p class="lead">Дипломы и награды мастера подтверждают уровень, который вы чувствуете в результате.</p>
+    <div class="cards">
+      <div class="award">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
+        <b>Название награды</b>год · организатор
+      </div>
+      <div class="award">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
+        <b>Название награды</b>год · организатор
+      </div>
+      <div class="award">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
+        <b>Сертификат</b>год · школа
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="prices">
+  <div class="wrap">
+    <p class="eyebrow">Прайс</p>
+    <h2>Услуги и цены</h2>
+
+    <div class="group">
+      <h3>Наращивание ресниц</h3>
+      <div class="row"><div class="name">Классическое<small>Одна ресница на одну, естественный эффект</small></div><div class="price">3 500 ₽</div></div>
+      <div class="row"><div class="name">1.5D<small>Лёгкий объём с мягкой густотой</small></div><div class="price">3 800 ₽</div></div>
+      <div class="row"><div class="name">2D<small>Заметная густота, выразительный взгляд</small></div><div class="price">4 000 ₽</div></div>
+      <div class="row"><div class="name">2.5D<small>Насыщенный объём</small></div><div class="price">4 500 ₽</div></div>
+      <div class="row"><div class="name">3D<small>Максимальная пушистость</small></div><div class="price">5 000 ₽</div></div>
+      <div class="row"><div class="name">Снятие без наращивания<small>Бережное удаление</small></div><div class="price">500 ₽</div></div>
+    </div>
+
+    <div class="group">
+      <h3>Брови</h3>
+      <div class="row"><div class="name">Ламинирование бровей</div><div class="price">3 000 ₽</div></div>
+      <div class="row"><div class="name">Коррекция и окрашивание бровей</div><div class="price">1 800 ₽</div></div>
+    </div>
+
+    <p class="note">Не уверены, какой эффект выбрать? Напишите в WhatsApp, подскажем.</p>
+    <div style="margin-top:24px"><a class="btn" href="https://wa.me/79265766992" target="_blank" rel="noopener">Выбрать время</a></div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <p class="eyebrow">Портфолио</p>
+    <h2>Наши работы</h2>
+    <p class="lead">Результаты до и после, разные эффекты и стили.</p>
+    <div class="gallery">
+      <div class="ph" role="img" aria-label="Место для фото работы">Фото работы</div>
+      <div class="ph" role="img" aria-label="Место для фото работы">Фото работы</div>
+      <div class="ph" role="img" aria-label="Место для фото работы">Фото работы</div>
+      <div class="ph" role="img" aria-label="Место для фото работы">Фото работы</div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="reviews">
+  <div class="wrap">
+    <p class="eyebrow">Отзывы</p>
+    <h2>Что говорят клиентки</h2>
+    <p class="lead">Отзывы с Яндекс Карт. Рейтинг 4.2.</p>
+    <div class="rev">
+      <blockquote><div class="stars" aria-hidden="true">★★★★★</div>Сделали мои редкие и прямые ресницы пушистыми и выразительными, но при этом абсолютно естественно. Ничего не щипало, не текло, я даже задремала.<cite>KrisGirl</cite></blockquote>
+      <blockquote><div class="stars" aria-hidden="true">★★★★★</div>Отличный мастер по наращиванию ресниц! Очень быстро, качественно и красиво. Всем рекомендую.<cite>Анастасия К.</cite></blockquote>
+      <blockquote><div class="stars" aria-hidden="true">★★★★★</div>Лучший мастер по ресничкам и бровкам! Екатерина моя волшебница уже 9 лет.<cite>Юлия Г.</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <p class="eyebrow">Как это проходит</p>
+    <h2>Четыре простых шага</h2>
+    <div class="steps">
+      <div class="step"><h3>Запись</h3><p>Пишете в WhatsApp, выбираем удобное время.</p></div>
+      <div class="step"><h3>Подбор эффекта</h3><p>Обсуждаем желаемый результат и форму глаз.</p></div>
+      <div class="step"><h3>Наращивание</h3><p>Спокойная процедура, можно расслабиться или поспать.</p></div>
+      <div class="step"><h3>Уход</h3><p>Рассказываем, как носить и когда прийти на коррекцию.</p></div>
+    </div>
+
+    <h2 style="margin-top:56px">Частые вопросы</h2>
+    <details><summary>Сколько длится процедура?</summary><p>Ориентировочно от двух до трёх часов, зависит от выбранного эффекта. Точное время уточним при записи.</p></details>
+    <details><summary>Это больно или неприятно?</summary><p>Нет, процедура безболезненная. Клиентки часто дремлют.</p></details>
+    <details><summary>Как выбрать между классикой и объёмом?</summary><p>Классика даёт естественный эффект, 2D и 3D — большую густоту. Напишите нам, подберём под вас.</p></details>
+    <details><summary>Можно ли снять ресницы у вас?</summary><p>Да, снятие без последующего наращивания стоит 500 ₽.</p></details>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <p class="eyebrow">Контакты</p>
+    <h2>Приходите знакомиться</h2>
+    <address>Москва, Шарикоподшипниковская улица, 22<br><a href="tel:+79265766992">+7 926 576-69-92</a></address>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/79265766992" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      <a class="btn ghost" href="https://yandex.ru/maps/?text=Москва%2C%20Шарикоподшипниковская%20улица%2C%2022" target="_blank" rel="noopener">Как доехать</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© Lablook, студия ресниц и бровей. Москва, Шарикоподшипниковская улица, 22.</div>
+</footer>
+
+<a class="btn fab" href="https://wa.me/79265766992" target="_blank" rel="noopener">Записаться в WhatsApp</a>
+
+</body>
+</html>
