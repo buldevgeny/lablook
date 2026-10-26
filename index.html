@@ -73,6 +73,28 @@ header{position:sticky;top:0;z-index:30;background:rgba(250,246,241,.92);backdro
 .award b{display:block;color:var(--ink);font:600 22px var(--serif)}
 @media(min-width:700px){.cards{grid-template-columns:repeat(3,1fr)}}
 
+
+/* awards */
+.awards-grid{display:grid;gap:16px;margin-top:32px}
+.aw{display:flex;flex-direction:column;text-align:left;font:inherit;color:inherit;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;cursor:pointer;padding:0;transition:box-shadow .2s,border-color .2s}
+.aw:hover{box-shadow:0 12px 32px rgba(43,36,32,.12);border-color:var(--gold)}
+.aw img{width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--surface);padding:12px}
+.aw-body{display:block;padding:16px 20px 20px}
+.aw-body b{display:block;font:600 22px/1.2 var(--serif)}
+.aw-body small{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+.aw-tag{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px}
+.aw-main{border-color:var(--gold)}
+@media(min-width:700px){.awards-grid{grid-template-columns:repeat(3,1fr)}.aw-main{grid-column:span 2}.aw-main img{aspect-ratio:16/10}}
+dialog{border:0;border-radius:20px;padding:20px;max-width:min(900px,94vw);max-height:92vh;background:#fff;color:var(--ink)}
+dialog::backdrop{background:rgba(43,36,32,.75)}
+dialog img{max-height:72vh;margin:0 auto;object-fit:contain}
+dialog p{margin-top:12px;font-size:15px;color:var(--muted);text-align:center}
+.lb-close{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;border:0;background:var(--surface);font-size:28px;line-height:1;cursor:pointer;color:var(--ink)}
+.lb-close:hover{background:var(--sand)}
+
+.hero-photo{width:100%;height:auto;object-fit:cover;object-position:50% 20%;padding:0}
+.about-photo{width:100%;height:auto;border-radius:24px;border:1px solid var(--line)}
+@media(min-width:820px){.about-grid{grid-template-columns:1.1fr .9fr}}
 /* prices */
 .prices{background:var(--surface)}
 .group{margin-top:36px}
@@ -158,23 +180,13 @@ footer{padding:28px 0;font-size:13px;color:var(--muted);text-align:center}
         <div><b>5</b><span>техник наращивания</span></div>
       </div>
     </div>
-    <div class="ph" role="img" aria-label="Место для фото работы мастера">
-      <div>
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="12" cy="12" r="3.5"/></svg>
-        Здесь будет фото работы
-      </div>
-    </div>
+    <img class="ph hero-photo" src="ekaterina.jpg" alt="Екатерина, мастер по наращиванию ресниц студии Lablook" width="584" height="731">
   </div>
 </section>
 
 <section class="about" id="master">
   <div class="wrap about-grid">
-    <div class="ph" role="img" aria-label="Место для портрета мастера Екатерины">
-      <div>
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>
-        Портрет Екатерины
-      </div>
-    </div>
+    <img class="about-photo" src="ekaterina-wide.jpg" alt="Екатерина в кабинете студии Lablook" loading="lazy" width="1280" height="731">
     <div>
       <p class="eyebrow">Ваш мастер</p>
       <h2>Екатерина</h2>
@@ -188,23 +200,45 @@ footer{padding:28px 0;font-size:13px;color:var(--muted);text-align:center}
   <div class="wrap">
     <p class="eyebrow">Признание</p>
     <h2>Награды и сертификаты</h2>
-    <p class="lead">Дипломы и награды мастера подтверждают уровень, который вы чувствуете в результате.</p>
-    <div class="cards">
-      <div class="award">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
-        <b>Название награды</b>год · организатор
-      </div>
-      <div class="award">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
-        <b>Название награды</b>год · организатор
-      </div>
-      <div class="award">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>
-        <b>Сертификат</b>год · школа
-      </div>
+    <p class="lead">Призовое место на международном конкурсе, звание мастера-технолога с правом преподавания и постоянное обучение новым техникам. Нажмите на документ, чтобы рассмотреть.</p>
+    <div class="awards-grid">
+      <button class="aw aw-main" data-src="awards/lashfest-4th-place.jpg" data-cap="Lash Fest, Санкт-Петербург, 2014: диплом мастера 1-й категории, IV место в номинации «Классическое наращивание»">
+        <img src="awards/lashfest-4th-place.jpg" alt="Диплом Lash Fest 2014: IV место в номинации «Классическое наращивание»" loading="lazy" width="1000" height="727">
+        <span class="aw-body"><span class="aw-tag">Конкурс · 2014</span><b>IV место, Lash Fest</b><small>Классическое наращивание, Санкт-Петербург</small></span>
+      </button>
+      <button class="aw" data-src="awards/darbor-lamination.jpg" data-cap="Darbor Professional, Москва, 18 сентября 2014: «Ламинирование ресниц», квалификация «мастер-технолог» с правом преподавания">
+        <img src="awards/darbor-lamination.jpg" alt="Сертификат Darbor Professional: мастер-технолог с правом преподавания" loading="lazy" width="706" height="1000">
+        <span class="aw-body"><span class="aw-tag">2014</span><b>Мастер-технолог</b><small>С правом преподавания, Darbor Professional</small></span>
+      </button>
+      <button class="aw" data-src="awards/lashfest-participant.jpg" data-cap="Lash Fest, Санкт-Петербург, 25–28 сентября 2014: диплом участника конкурса по наращиванию ресниц и оформлению бровей">
+        <img src="awards/lashfest-participant.jpg" alt="Диплом участника Lash Fest 2014" loading="lazy" width="1000" height="755">
+        <span class="aw-body"><span class="aw-tag">2014</span><b>Участник Lash Fest</b><small>Конкурс по наращиванию и оформлению бровей</small></span>
+      </button>
+      <button class="aw" data-src="awards/open-championship.jpg" data-cap="Открытый чемпионат по наращиванию ресниц 2014: сертификат за прохождение предконкурсного тренинга, 12.12.2014">
+        <img src="awards/open-championship.jpg" alt="Сертификат Открытого чемпионата по наращиванию ресниц 2014" loading="lazy" width="1000" height="726">
+        <span class="aw-body"><span class="aw-tag">2014</span><b>Открытый чемпионат</b><small>Предконкурсный тренинг</small></span>
+      </button>
+      <button class="aw" data-src="awards/business-school.jpg" data-cap="Международная школа бизнеса МТПП: «Эффективное предпринимательство в индустрии красоты», 48 академических часов, декабрь 2014">
+        <img src="awards/business-school.jpg" alt="Удостоверение Международной школы бизнеса МТПП о повышении квалификации" loading="lazy" width="1000" height="732">
+        <span class="aw-body"><span class="aw-tag">2014</span><b>Повышение квалификации</b><small>Международная школа бизнеса МТПП, 48 часов</small></span>
+      </button>
+      <button class="aw" data-src="awards/house-of-beauty.jpg" data-cap="House of Beauty, Москва, 7 августа 2013: курс «Японская технология наращивания ресниц поресничного»">
+        <img src="awards/house-of-beauty.jpg" alt="Свидетельство House of Beauty: японская технология наращивания" loading="lazy" width="686" height="1000">
+        <span class="aw-body"><span class="aw-tag">2013</span><b>Японская технология</b><small>Поресничное наращивание, House of Beauty</small></span>
+      </button>
+      <button class="aw" data-src="awards/lash-concentrat-anime.jpg" data-cap="Lash Concentrat, 12 мая 2023: вебинар по наращиванию ресниц «Эффект аниме»">
+        <img src="awards/lash-concentrat-anime.jpg" alt="Сертификат Lash Concentrat: эффект аниме" loading="lazy" width="1000" height="715">
+        <span class="aw-body"><span class="aw-tag">2023</span><b>Эффект аниме</b><small>Lash Concentrat, обучение новым техникам</small></span>
+      </button>
     </div>
   </div>
 </section>
+
+<dialog id="lightbox" aria-label="Просмотр документа">
+  <button class="lb-close" aria-label="Закрыть">×</button>
+  <img alt="">
+  <p></p>
+</dialog>
 
 <section class="prices" id="prices">
   <div class="wrap">
@@ -297,5 +331,19 @@ footer{padding:28px 0;font-size:13px;color:var(--muted);text-align:center}
 
 <a class="btn fab" href="https://wa.me/79265766992" target="_blank" rel="noopener">Записаться в WhatsApp</a>
 
+<script>
+(function(){
+  var d=document.getElementById('lightbox');
+  if(!d||!d.showModal)return;
+  var img=d.querySelector('img'),cap=d.querySelector('p');
+  document.querySelectorAll('.aw').forEach(function(b){
+    b.addEventListener('click',function(){
+      img.src=b.dataset.src;img.alt=b.querySelector('img').alt;cap.textContent=b.dataset.cap;d.showModal();
+    });
+  });
+  d.querySelector('.lb-close').addEventListener('click',function(){d.close()});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+})();
+</script>
 </body>
 </html>
